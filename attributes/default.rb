@@ -27,4 +27,4 @@ else
   default['emacs']['packages'] = ["emacs"]
 end
 
-default['emacs']['default_dot_users'] = ['root']
+default['emacs']['default_dot_users'] = ['/root']
