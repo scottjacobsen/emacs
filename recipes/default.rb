@@ -30,3 +30,13 @@ node['emacs']['packages'].each do |pkg|
   end
 
 end
+
+node['emacs']['default_dot_users'].each  do |path|
+  cookbook_file File.join(path, '.emacs') do
+    source "dotemacs"
+    owner File.basename(path)
+    group File.basename(path)
+    mode 00644
+    action :create_if_missing
+  end
+end
